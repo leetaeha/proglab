@@ -52,8 +52,22 @@
 	$('.file_area a').on({
 		click : function() {
 			$(this).siblings('input').trigger('click');
+			
+			$.ajax({
+			    url: 'ajax/upload.php',
+			    data: $('#file').attr('files'),
+			    cache: false,
+			    contentType: 'multipart/form-data',
+			    processData: false,
+			    type: 'POST',
+			    success: function(data){
+			        alert(data);
+			    }
+			});
+			
 		}
 	});
+	
 </script>
 </body>
 </html>
