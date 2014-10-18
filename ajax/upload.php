@@ -1,6 +1,6 @@
 <?php
 
-echo "zzz";
+$_FILES['file-0'];
 
 
 ?>
