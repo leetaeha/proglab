@@ -29,8 +29,10 @@
 		<div id="header">
 			<div class="inner">
 				<div class="file_area">
-					<input type="file" >
+				<form id="uploadform" name="upload" method="post" enctype="multipart/form-data" action="upload.php">
+					<input type="file" name="file" id="file" >
 					<a href="#"><img src="Image.png" alt=""></a>
+				</form>
 				</div>
 			</div>
 		</div>
@@ -52,9 +54,13 @@
 	$('.file_area a').on({
 		click : function() {
 			$(this).siblings('input').trigger('click');
-			
+			_upload();
 		}
 	});
+	
+	function _upload(){
+	   document.upload.submit();
+	}
 	
 </script>
 </body>
